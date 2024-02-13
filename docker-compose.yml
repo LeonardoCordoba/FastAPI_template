@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+    server:
+        image: fastapi_template/server:latest
+        container_name: server
+        build:
+            context: .
+            dockerfile: ./dockerfiles/server/Dockerfile
+        ports:
+            - "8003:8003"

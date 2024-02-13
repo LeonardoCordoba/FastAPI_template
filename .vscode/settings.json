@@ -1,0 +1,17 @@
+{
+    "python.testing.pytestArgs": [
+        "test"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "flake8.args": [
+        "--max-line-length=88"
+],
+"black-formatter.args": [
+        "--line-length=88"
+],
+"editor.formatOnSave": true
+}
