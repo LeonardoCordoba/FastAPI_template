@@ -12,7 +12,42 @@ pydantic = "^2.6.1"
 typer = "^0.9.0"
 uvicorn = "^0.27.1"
 pre-commit = "^3.6.1"
+black = "^24.2.0"
+isort = "^5.13.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+color = true
+line-length = 88
+
+[tool.isort]
+color_output = true
+combine_as_imports = true
+ensure_newline_before_comments = true
+force_alphabetical_sort_within_sections = true
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 88
+lines_between_sections = 1
+multi_line_output = 3
+profile = "black"
+skip = [
+    ".coverage",
+    "coverage/*",
+    "cov.*",
+    ".dockerignore",
+    ".env",
+    ".github/*",
+    ".gitignore",
+    ".html",
+    ".md",
+    ".python-version",
+    ".rst",
+    ".xml",
+]
+skip_gitignore = true
+src_paths = ["src/", "tests/"]
+use_parentheses = true
