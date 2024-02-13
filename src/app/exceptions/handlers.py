@@ -2,9 +2,9 @@ from functools import wraps
 from json import JSONDecodeError
 
 from fastapi import Request, status
-from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 
 
 async def get_request_input(request: Request) -> tuple[dict, dict]:
@@ -37,6 +37,7 @@ def exception_handler(func: callable) -> callable:
         )
 
     return wrapper
+
 
 @exception_handler
 def exception_422(exc: RequestValidationError) -> tuple[int, str]:
